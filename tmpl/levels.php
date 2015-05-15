@@ -3,12 +3,15 @@
  * @package      Gamification Platform
  * @subpackage   Modules
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2015 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
 // no direct access
 defined('_JEXEC') or die;
+
+$doc = JFactory::getDocument();
+$doc->addStyleSheet(JURI::root().'modules/mod_gamificationleaderboard/css/style.css');
 ?>
 <div class="gfy-modlb<?php echo $moduleclass_sfx;?>">
 <?php for($i = 0; $i < $numberItems; $i++) {

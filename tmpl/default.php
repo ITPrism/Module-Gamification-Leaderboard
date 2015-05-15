@@ -3,12 +3,17 @@
  * @package      Gamification Platform
  * @subpackage   Modules
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2015 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
+use Joomla\String\String;
+
 // no direct access
 defined('_JEXEC') or die;
+
+$doc = JFactory::getDocument();
+$doc->addStyleSheet(JURI::root().'modules/mod_gamificationleaderboard/css/style.css');
 ?>
 <div class="gfy-modlb<?php echo $moduleclass_sfx;?>">
 
@@ -21,7 +26,7 @@ defined('_JEXEC') or die;
             break;
 
         case "title":
-            $pointsTypeClean = JString::strtolower(htmlspecialchars($leaderboard[$i]->title, ENT_QUOTES, "UTF-8"));
+            $pointsTypeClean = String::strtolower(htmlspecialchars($leaderboard[$i]->title, ENT_QUOTES, "UTF-8"));
             break;
 
         default:
@@ -34,10 +39,11 @@ defined('_JEXEC') or die;
 
         // Get avatar
         $avatar = $socialProfiles->getAvatar($leaderboard[$i]->user_id, $avatarSize);
+
         if (!$avatar) {
             $avatar = '<img class="media-object" src="media/com_gamification/images/no_picture.png">';
         } else {
-            $avatar = '<img class="media-object" src="'.$avatar.'" width="'.$avatarSize.'" height="'.$avatarSize.'">';
+            $avatar = '<img class="media-object" src="'.$avatar.'">';
         }
 
         $link   =  $socialProfiles->getLink($leaderboard[$i]->user_id);
@@ -58,16 +64,21 @@ defined('_JEXEC') or die;
         <div class="pull-left gfy-modlb-number"><?php echo $i + 1;?></div>
     <?php } ?>
 
-        <a class="pull-left" href="<?php echo $link;?>">
-        <?php echo $avatar; ?>
-        </a>
+        <div class="media-left">
+            <a href="<?php echo $link;?>">
+                <?php echo $avatar; ?>
+            </a>
+        </div>
 
         <div class="media-body">
-            <h5 class="media-heading"><?php echo $name;?></h5>
-            <p class="gfy-media-points"><?php echo (int)$leaderboard[$i]->points." ".$pointsTypeClean;?></p>
+            <h5 class="media-heading">
+                <?php echo $name;?>
+            </h5>
+            <p class="gfy-media-points">
+                <?php echo (int)$leaderboard[$i]->points." ".$pointsTypeClean;?>
+            </p>
         </div>
 
     </div>
-    <div class="clearfix"></div>
 <?php }?>
 </div>

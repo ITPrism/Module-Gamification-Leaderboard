@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.2" client="site" method="upgrade">
+<extension type="module" version="3.4" client="site" method="upgrade">
 	<name>MOD_GAMIFICATIONLEADERBOARD</name>
 	<author>Todor Iliev</author>
-	<copyright>Copyright (C) 2014 Todor Iliev ( ITPrism.com )</copyright>
+	<copyright>Copyright (C) 2015 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
-	<version>1.3</version>
-	<creationDate>30 May, 2014</creationDate>
+	<version>2.0</version>
+	<creationDate>30 April, 2015</creationDate>
 	<description><![CDATA[
     <p>Gamification Leaderboard is a module that displays a leaderboard based on points, levels,...</p>
     <p>Invest in the extension and help for its improvement. You can <a href="http://itprism.com/sponsorship" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
     <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
-    <p>Please, <a href="http://extensions.joomla.org/extensions/e-commerce/credits-a-point-systems/23872" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
+    <p>Please, <a href="http://extensions.joomla.org/extensions/extension/e-commerce/credits-a-point-systems/gamification-platform" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
     ]]></description>
 
 	<help url="MOD_GAMIFICATIONLEADERBOARD_HELP_URL" />
@@ -22,7 +22,6 @@
         <folder>language</folder>
         <folder>tmpl</folder>
 		<filename module="mod_gamificationleaderboard">mod_gamificationleaderboard.php</filename>
-		<filename>index.html</filename>
 	</files>
 
 	<config>
@@ -105,24 +104,6 @@
                     <option value="1">JYES</option>
                 </field>
                 
-            </fieldset>
-
-            <fieldset name="integration" label="MOD_GAMIFICATIONLEADERBOARD_INTEGRATION_OPTIONS" >
-                <field name="integrate" type="list"
-                    label="MOD_GAMIFICATIONLEADERBOARD_INTEGRATE" 
-                    description="MOD_GAMIFICATIONLEADERBOARD_INTEGRATE_DESC"
-                    default="none">
-                    <option value="none">MOD_GAMIFICATIONLEADERBOARD_NONE</option>
-                    <option value="socialcommunity">MOD_GAMIFICATIONLEADERBOARD_SOCIAL_COMMUNITY</option>
-                    <option value="kunena">MOD_GAMIFICATIONLEADERBOARD_KUNENA</option>
-                    <option value="gravatar">MOD_GAMIFICATIONLEADERBOARD_GRAVATAR</option>
-                    <option value="jomsocial">MOD_GAMIFICATIONLEADERBOARD_JOMSOCIAL</option>
-                </field>
-                
-                <field name="avatar_size" type="text"
-                    label="MOD_GAMIFICATIONLEADERBOARD_AVATAR_SIZE" 
-                    description="MOD_GAMIFICATIONLEADERBOARD_AVATAR_SIZE_DESC"
-                    default="50" />
             </fieldset>
 
             <fieldset name="advanced">
