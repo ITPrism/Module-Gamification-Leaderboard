@@ -7,10 +7,9 @@
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
 	<version>2.0</version>
-	<creationDate>30 April, 2015</creationDate>
+	<creationDate>28 August, 2015</creationDate>
 	<description><![CDATA[
     <p>Gamification Leaderboard is a module that displays a leaderboard based on points, levels,...</p>
-    <p>Invest in the extension and help for its improvement. You can <a href="http://itprism.com/sponsorship" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
     <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
     <p>Please, <a href="http://extensions.joomla.org/extensions/extension/e-commerce/credits-a-point-systems/gamification-platform" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
     ]]></description>
@@ -59,6 +58,13 @@
                     label="MOD_GAMIFICATIONLEADERBOARD_RESULTS_NUMBER" 
                     description="MOD_GAMIFICATIONLEADERBOARD_RESULTS_NUMBER_DESC"
                     default="10" />
+
+                <field name="integration_avatars_size" type="list" default="small" label="MOD_GAMIFICATIONLEADERBOARD_AVATARS_SIZE" description="MOD_GAMIFICATIONLEADERBOARD_AVATARS_SIZE_DESC" >
+                    <option value="icon">MOD_GAMIFICATIONLEADERBOARD_ICON</option>
+                    <option value="small">MOD_GAMIFICATIONLEADERBOARD_SMALL</option>
+                    <option value="medium">MOD_GAMIFICATIONLEADERBOARD_MEDIUM</option>
+                    <option value="large">MOD_GAMIFICATIONLEADERBOARD_LARGE</option>
+                </field>
                     
 			</fieldset>
 

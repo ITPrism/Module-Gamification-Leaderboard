@@ -4,14 +4,14 @@
  * @subpackage   Modules
  * @author       Todor Iliev
  * @copyright    Copyright (C) 2015 Todor Iliev <todor@itprism.com>. All rights reserved.
- * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @license      GNU General Public License version 3 or later; see LICENSE.txt
  */
 
 // no direct access
 defined( "_JEXEC" ) or die;
 
-jimport("prism.init");
-jimport("gamification.init");
+jimport("Prism.init");
+jimport("Gamification.init");
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
@@ -62,8 +62,8 @@ switch($layout) {
 
 $displayNumber  = $params->get("display_number", 1);
 $nameLinkable   = $params->get("name_linkable", 1);
+$avatarSize     = $params->get("integration_avatars_size", "small");
 $socialPlatform = $componentParams->get("integration_social_platform");
-$avatarSize     = $componentParams->get("integration_avatars_size");
 
 $socialProfiles = null;
 $numberItems    = count($leaderboard);
@@ -76,8 +76,6 @@ if (!empty($numberItems)) {
         }
         $usersIds = array_unique($usersIds);
 
-        JLoader::register("Prism\\Integration\\Profiles\\Builder", PRISM_PATH_LIBRARY . "/integration/profiles/builder.php");
-
         $config = array(
             "social_platform" => $socialPlatform,
             "users_ids" => $usersIds
@@ -86,7 +84,6 @@ if (!empty($numberItems)) {
         $socialProfilesBuilder = new Prism\Integration\Profiles\Builder($config);
         $socialProfilesBuilder->build();
         $socialProfiles = $socialProfilesBuilder->getProfiles();
-
     }
 
     require JModuleHelper::getLayoutPath('mod_gamificationleaderboard', $params->get('layout', 'default'));
