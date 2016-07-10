@@ -1,6 +1,6 @@
 Module - Gamification Leaderboard
 ===============================
-( Version 2.0 )
+( Version 2.1 )
 - - -
 
 Gamification Leaderboard is a module that displays a leaderboard based on points, levels,...
